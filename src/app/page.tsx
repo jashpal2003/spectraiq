@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
-import { Menu, X, Code, Bot, Zap, Brain, Users, Mail, Github, Linkedin, Server } from 'lucide-react';
+import { Menu, X, Code, Bot, Zap, Brain, Mail, Github, Linkedin, Server } from 'lucide-react';
+import Image from 'next/image';
 import './page.css';
 
 interface NavigationProps {
@@ -130,7 +131,7 @@ const Services = () => (
 
 const ProjectCard = ({ title, description, link, imageUrl }: { title: string, description: string, link: string, imageUrl: string }) => (
   <div className="p-6 bg-gray-900 rounded-xl border border-gray-800 hover:border-gray-700 transition scroll-item">
-    <img src={imageUrl} alt={title} className="w-full h-48 object-cover rounded-t-xl mb-4" />
+    <Image src={imageUrl} alt={title} width={300} height={200} className="w-full h-48 object-cover rounded-t-xl mb-4" />
     <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
     <p className="text-gray-400 mb-4">{description}</p>
     <a href={link} className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">View Project</a>
@@ -314,7 +315,5 @@ const Page = () => {
 };
 
 export default Page;
-
-// Google Apps Script code should be handled separately in a Google Apps Script project.
 
 
